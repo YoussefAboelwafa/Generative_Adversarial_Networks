@@ -7,3 +7,7 @@ A GAN consists of two neural networks, the Generator and the Discriminator, whic
 
 The key concept in GANs is adversarial training. The Generator tries to improve its ability to produce realistic data, while the Discriminator strives to get better at distinguishing real from fake data. This adversarial process continues iteratively until the Generator generates data that is difficult for the Discriminator to distinguish from real data. At this point, the Generator has effectively learned to generate highly convincing and realistic synthetic data.
 
+<img src="https://github.com/user-attachments/assets/d1aad58b-ec69-42e5-9238-01cbbd0899c2" alt="Image description" width="400"/> <hr>
+<img src="https://github.com/user-attachments/assets/f218f613-0d05-4cac-83da-d416d38c9514" alt="Image description" width="400"/>
+
+
