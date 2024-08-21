@@ -1,4 +1,3 @@
-from comet_ml import Experiment
 import torch
 import torch.nn as nn
 import torchvision.transforms as transforms
@@ -6,13 +5,6 @@ import torchvision.datasets as datasets
 from torch.utils.data import DataLoader
 from model import Generator, Discriminator
 from config import *
-
-experiment = Experiment(
-    api_key="rwyMmTQC0QDIH0oF5XaSzgmh4",
-    project_name="gans",
-    workspace="youssefaboelwafa",
-)
-experiment.set_name(EXP_NAME)
 
 transform = transforms.Compose(
     [
@@ -71,12 +63,7 @@ for epoch in range(EPOCHS):
         loss_G = loss_g.item()
 
     print(
-        f"Epoch [{epoch+1}/{EPOCHS}]\n"
-        f"Loss_D: {loss_D:.4f}, Loss_G: {loss_G:.4f}\n"
+        f"Epoch [{epoch+1}/{EPOCHS}]\n" f"Loss_D: {loss_D:.4f}, Loss_G: {loss_G:.4f}\n"
     )
-
-    experiment.log_metric("loss_D", loss_D, step=epoch)
-    experiment.log_metric("loss_G", loss_G, step=epoch)
-
 
 torch.save(generator.state_dict(), "generator.pth")
