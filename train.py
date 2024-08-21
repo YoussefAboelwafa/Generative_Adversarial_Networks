@@ -70,14 +70,14 @@ for epoch in range(EPOCHS):
         loss_D = (loss_real.item() + loss_fake.item()) / 2
         loss_G = loss_g.item()
 
-        if (i + 1) % 10 == 0:
-            print(
-                f"Epoch [{epoch+1}/{EPOCHS}]\n"
-                f"Loss_D: {loss_D:.4f}, Loss_G: {loss_G:.4f}"
-            )
+    if (i + 1) % 10 == 0:
+        print(
+            f"Epoch [{epoch+1}/{EPOCHS}]\n"
+            f"Loss_D: {loss_D:.4f}, Loss_G: {loss_G:.4f}\n"
+        )
 
-        experiment.log_metric("loss_D", loss_D, step=epoch)
-        experiment.log_metric("loss_G", loss_G, step=epoch)
+    experiment.log_metric("loss_D", loss_D, step=epoch)
+    experiment.log_metric("loss_G", loss_G, step=epoch)
 
 
 torch.save(generator.state_dict(), "generator.pth")
